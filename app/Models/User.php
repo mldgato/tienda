@@ -16,4 +16,12 @@ class User extends Model
         $Usuario->where($data);
         return $Usuario->get()->getResultArray();
     }
+
+    public function findAllWithRoles()
+    {
+        return $this->select('users.*, roles.rolname AS rolAsignado')
+            ->join('roles', 'roles.id_rol = users.id_rol')
+            ->where('users.state', 1)->orderBy('name', 'ASC')
+            ->findAll();
+    }
 }

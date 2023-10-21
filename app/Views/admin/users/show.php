@@ -12,35 +12,93 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-12 col-md-9">
-                <form id="formUserData" name="formUserData" action="" method="post">
+                <?php
+                if (session('id_rol') == 1) {
+                ?>
+                    <form id="formUserData" name="formUserData" action="<?php echo base_url('admin/users/update/' . $user['id_user']); ?>" method="post" accept-charset="utf-8" autocomplete="off">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label for="name">Nombre:<small class="text-danger">*</small></label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-info"><i class="fas fa-user"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="<?= $user['name']; ?>">
+                                </div>
+                                <?php if (session('errors.name')) : ?>
+                                    <small class="text-danger"><?= session('errors.name') ?></small>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="email">Email:<small class="text-danger">*</small></label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-info"><i class="fas fa-envelope"></i></div>
+                                    </div>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user['email']; ?>">
+                                </div>
+                                <?php if (session('errors.email')) : ?>
+                                    <small class="text-danger"><?= session('errors.email') ?></small>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="id_rol">Rol:<small class="text-danger">*</small></label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-info"><i class="fas fa-user-tag"></i></div>
+                                    </div>
+                                    <select name="id_rol" id="id_rol" class="form-control">
+                                        <?php foreach ($roles as $rol) : ?>
+                                            <option value="<?= $rol['id_rol']; ?>" <?= ($user['id_rol'] == $rol['id_rol']) ? 'selected' : ''; ?>>
+                                                <?= $rol['rolname']; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <?php if (session('errors.id_rol')) : ?>
+                                    <small class="text-danger"><?= session('errors.id_rol') ?></small>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center mt-3">
+                                <button type="submit" class="btn btn-success" id="submit" name="submit">Guardar <i class="fas fa-save"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                <?php
+                } else {
+                ?>
                     <div class="row">
                         <div class="col-sm-12">
-                            <label for="inlineFormInputGroup">Nombre:<small class="text-danger">*</small></label>
+                            <label for="name">Nombre:<small class="text-danger">*</small></label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text bg-info"><i class="fas fa-user"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="<?= $user['name']; ?>">
+                                <input type="text" class="form-control" id="name" value="<?= $user['name']; ?>" disabled>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-                            <label for="inlineFormInputGroup">Email:<small class="text-danger">*</small></label>
+                            <label for="email">Email:<small class="text-danger">*</small></label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text bg-info"><i class="fas fa-envelope"></i></div>
                                 </div>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user['email']; ?>">
+                                <input type="email" class="form-control" id="email" value="<?= $user['email']; ?>" disabled>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <label for="inlineFormInputGroup">Rol:<small class="text-danger">*</small></label>
+                            <label for="id_rol">Rol:<small class="text-danger">*</small></label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text bg-info"><i class="fas fa-user-tag"></i></div>
                                 </div>
-                                <select name="id_rol" id="id_rol" class="form-control">
+                                <select id="id_rol" class="form-control" disabled>
                                     <?php foreach ($roles as $rol) : ?>
                                         <option value="<?= $rol['id_rol']; ?>" <?= ($user['id_rol'] == $rol['id_rol']) ? 'selected' : ''; ?>>
                                             <?= $rol['rolname']; ?>
@@ -50,9 +108,43 @@
                             </div>
                         </div>
                     </div>
+                <?php
+                }
+                ?>
+                <div class="row mt-3">
+                    <div class="col">
+                        <hr>
+                        <label>Actualizar contraseña:</label>
+                    </div>
+                </div>
+                <form id="formPasswordData" name="formPasswordData" action="<?php echo base_url('admin/users/updatePass/' . $user['id_user']); ?>" method="post" accept-charset="utf-8" autocomplete="off">
                     <div class="row">
-                        <div class="col-sm-12 text-center mt-3">
-                            <button type="submit" class="btn btn-success" id="buttonUserData" name="buttonUserData">Guardar <i class="fas fa-save"></i></button>
+                        <div class="col-sm-12 col-md-4">
+                            <label for="password" class="sr-only">Contraseña:<small class="text-danger">*</small></label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-info"><i class="fas fa-lock"></i></div>
+                                </div>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Nueva contraseña">
+                            </div>
+                            <?php if (session('errors.password')) : ?>
+                                <small class="text-danger"><?= session('errors.password') ?></small>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <label for="repeat" class="sr-only">Repetir:<small class="text-danger">*</small></label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-info"><i class="fas fa-redo-alt"></i></div>
+                                </div>
+                                <input type="password" class="form-control" id="repeat" name="repeat" placeholder="Repita la contraseña">
+                            </div>
+                            <?php if (session('errors.repeat')) : ?>
+                                <small class="text-danger"><?= session('errors.repeat') ?></small>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <button type="submit" class="btn btn-danger" id="submitPass" name="submitPass">Guardar <i class="fas fa-save"></i></button>
                         </div>
                     </div>
                 </form>

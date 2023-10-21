@@ -25,12 +25,13 @@ class Home extends BaseController
         $users = new User();
 
         $datosUsuario = $users->getUser(['email' => $email]);
-        if (count($datosUsuario) > 0 && password_verify($password, $datosUsuario[0]['password'])) {
+        if (count($datosUsuario) > 0 && password_verify($password, $datosUsuario[0]['password']) && $datosUsuario[0]['state'] == 1) {
             $data = [
                 'id_user' => $datosUsuario[0]['id_user'],
                 'name' => $datosUsuario[0]['name'],
                 'email' => $datosUsuario[0]['email'],
                 'image' => $datosUsuario[0]['image'],
+                'id_rol' => $datosUsuario[0]['id_rol'],
                 'isLogin' => true
             ];
             $session = session();

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
     <style>
         .square-image {
             width: 100px !important;
@@ -149,12 +150,31 @@
                             </ul>
                         </li>
                         <li class="nav-header">EXAMPLES</li> -->
+                        <li class="nav-header">Usuarios</li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('admin/users/show/' . session('id_user')); ?>" class="nav-link text-info">
                                 <i class="fas fa-user-cog fa-fw"></i>
                                 <p>Perfil</p>
                             </a>
                         </li>
+                        <?php
+                        if (session('id_rol') == 1) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/users/index'); ?>" class="nav-link text-info">
+                                    <i class="fas fa-users"></i>
+                                    <p>Usuarios</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/users/create'); ?>" class="nav-link text-info">
+                                    <i class="fas fa-user-plus"></i>
+                                    <p>Crear nuevo</p>
+                                </a>
+                            </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -181,9 +201,9 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.2.0
+                <b>Version</b> 1.0
             </div>
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2023 Developed by <span class="text-info">Glenda Ramíres & Manuel Dardón</span></strong> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->
@@ -201,6 +221,8 @@
     <!-- AdminLTE App -->
     <script src="<?= base_url('dist/js/adminlte.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
     <?= $this->renderSection('script'); ?>
 </body>
 
