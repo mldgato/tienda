@@ -27,6 +27,7 @@ class Home extends BaseController
         $datosUsuario = $users->getUser(['email' => $email]);
         if (count($datosUsuario) > 0 && password_verify($password, $datosUsuario[0]['password'])) {
             $data = [
+                'id_user' => $datosUsuario[0]['id_user'],
                 'name' => $datosUsuario[0]['name'],
                 'email' => $datosUsuario[0]['email'],
                 'image' => $datosUsuario[0]['image'],

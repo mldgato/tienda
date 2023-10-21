@@ -4,6 +4,7 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 use Faker\Factory;
+use App\Models\Rol;
 
 class UserSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class UserSeeder extends Seeder
             'email' => $email,
             'password' => $password,
             'image' => NULL,
-            'rol' => 1
+            'id_rol' => 1
         ];
         $this->db->table('users')->insert($data);
 
@@ -29,27 +30,30 @@ class UserSeeder extends Seeder
             'email' => $email,
             'password' => $password,
             'image' => NULL,
-            'rol' => 1
+            'id_rol' => 1
         ];
         $this->db->table('users')->insert($data);
 
+        $rolesModel = new Rol();
+        $roles = $rolesModel->findAll();
+
         for ($i = 0; $i < 8; $i++) {
-            $user = $this->generateFakeUser();
+            $user = $this->generateFakeUser($roles);
             $this->db->table('users')->insert($user);
         }
     }
 
-    private function generateFakeUser()
+    private function generateFakeUser($roles)
     {
         $fakerObject = Factory::create();
-
         $password = password_hash('12345678', PASSWORD_DEFAULT);
+        $randomRoleId = $fakerObject->randomElement(array_column($roles, 'id_rol'));
 
         return array(
             'name' => $fakerObject->name,
             'email' => $fakerObject->email,
             'password' => $password,
-            'rol' => $fakerObject->randomElement([0, 1])
+            'id_rol' => $randomRoleId
         );
     }
 }
