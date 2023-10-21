@@ -29,4 +29,13 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+    public $aliases = [
+        // ...
+        'imageLib' => CodeIgniter\Image\Image::class,
+    ];
+
+    public $classes = [
+        // ...
+        'imageLib' => CodeIgniter\Image\Image::class,
+    ];
 }
