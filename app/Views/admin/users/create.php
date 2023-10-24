@@ -103,5 +103,7 @@ if (isset($_SESSION['message'])) {
     </script>
 <?php
 }
+session()->remove('message');
+session()->remove('alert-class');
 ?>
 <?= $this->endSection(); ?>

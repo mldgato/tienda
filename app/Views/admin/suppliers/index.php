@@ -51,7 +51,7 @@
                     endforeach
                     ?>
                 </tbody>
-                <thead class="thead-dark">
+                <tfoot class="thead-dark">
                     <th>NIT</th>
                     <th>Proveedor</th>
                     <th>Teléfono</th>
@@ -73,6 +73,8 @@ if (isset($_SESSION['message'])) {
     </script>
 <?php
 }
+session()->remove('message');
+session()->remove('alert-class');
 ?>
 <script type="text/javascript">
     function confirmarEliminacion(url) {

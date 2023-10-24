@@ -1,7 +1,7 @@
 <?= $this->extend('templates/admin_template'); ?>
 
 <?= $this->section('content-header'); ?>
-<h1>Lista de usuarios <i class="fas fa-users"></i></h1>
+<h1>Productos <i class="fas fa-cubes"></i></h1>
 <?= $this->endSection(); ?>
 
 <?= $this->section('content'); ?>
@@ -9,48 +9,54 @@
     <div class="card-header">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <h2 class="text-info">Usuarios registrados</h2>
+                <h2 class="text-info">Listado</h2>
             </div>
             <div class="col-sm-12 col-md-6 text-right">
-                <a href="<?php echo base_url('admin/users/create'); ?>" class="btn btn-outline-warning">Crear nuevo usuario <i class="fas fa-user-plus"></i></a>
+                <a href="<?php echo base_url('admin/products/create'); ?>" class="btn btn-outline-warning">Crear nuevo producto <i class="fas fa-user-plus"></i></a>
             </div>
         </div>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped table-hover" id="tableData">
+            <table class="table table-striped table-hover table-sm" id="tableData">
                 <thead class="thead-dark">
                     <tr>
                         <th>&nbsp;</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Rol</th>
+                        <th>Cod.</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Costo</th>
+                        <th>Precio</th>
+                        <th>Proveedor</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($users as $user) :
+                    foreach ($products as $product) :
                     ?>
                         <tr>
                             <td>
                                 <?php
-                                if ($user['image'] == null) {
-                                    echo '<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="square-image" alt="User Image">';
+                                if ($product['image'] == null) {
+                                    echo '<img src="https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944_1280.jpg" class="product-image" alt="Imagen de producto">';
                                 } else {
-                                    echo '<img src="' . base_url('dist/img/users/' . $user['image']) . '" class="square-image" alt="User Image">';
+                                    echo '<a href="' . base_url('dist/img/products/' . $product['image']) . '" data-lightbox="img_' . $product['id_product'] . '" data-title="' . $product['product_name'] . '"><img src="' . base_url('dist/img/products/' . $product['image']) . '" id="img_' . $product['id_product'] . '" class="product-image" alt="Imagen de producto"></a>';
                                 }
                                 ?>
                             </td>
-                            <td><?= $user['name']; ?></td>
-                            <td><?= $user['email']; ?></td>
-                            <td><?= $user['rolAsignado']; ?></td>
+                            <td><?= $product['cod'] ?></td>
+                            <td><?= $product['product_name'] ?></td>
+                            <td><?= $product['quantity'] ?></td>
+                            <td><?= $product['cost'] ?></td>
+                            <td><?= $product['price'] ?></td>
+                            <td><?= $product['proveedor'] ?></td>
                             <td>
                                 <div class="d-flex justify-content-between">
-                                    <a href="<?php echo base_url('admin/users/show/' . $user['id_user']); ?>" class="btn btn-primary btn-sm me-1"><span class="d-none d-md-inline">Editar</span>
+                                    <a href="<?php echo base_url('admin/products/edit/' . $product['id_product']); ?>" class="btn btn-primary btn-sm me-1"><span class="d-none d-md-inline">Editar</span>
                                         <i class="fas fa-edit"></i></a>
 
-                                    <button type="button" class="btn btn-danger btn-sm ms-1" onclick="confirmarEliminacion('<?php echo base_url('admin/users/delete/' . $user['id_user']); ?>')"><span class="d-none d-md-inline">Eliminar</span>
+                                    <button type="button" class="btn btn-danger btn-sm ms-1" onclick="confirmarEliminacion('<?php echo base_url('admin/products/delete/' . $product['id_product']); ?>')"><span class="d-none d-md-inline">Eliminar</span>
                                         <i class="fas fa-trash-alt"></i></button>
                                 </div>
                             </td>
@@ -59,14 +65,15 @@
                     endforeach
                     ?>
                 </tbody>
-                <thead class="thead-dark">
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Rol</th>
-                        <th>&nbsp;</th>
-                    </tr>
+                <tfoot class="thead-dark">
+                    <th>&nbsp;</th>
+                    <th>Cod.</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Costo</th>
+                    <th>Precio</th>
+                    <th>Proveedor</th>
+                    <th>&nbsp;</th>
                 </tfoot>
             </table>
         </div>
@@ -89,8 +96,8 @@ session()->remove('alert-class');
 <script type="text/javascript">
     function confirmarEliminacion(url) {
         Swal.fire({
-            title: '¿Eliminar al usuario?',
-            text: "¿Está seguro que quiere eliminar al usuario? Ya no podrá usar la información una vez la elimine",
+            title: '¿Eliminar al producto?',
+            text: "¿Está seguro que quiere eliminar al producto? Ya no podrá usar la información una vez la elimine",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

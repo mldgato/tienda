@@ -13,6 +13,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
     <style>
         .square-image {
             width: 100px !important;
@@ -24,9 +25,22 @@
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        .product-image {
+            width: 100px !important;
+            height: 100px !important;
+            overflow: hidden;
+        }
+
         /* Media query para pantallas de celular */
         @media (max-width: 576px) {
             .square-image {
+                width: 45px !important;
+                /* Ancho deseado para celulares */
+                height: 45px !important;
+                /* Alto deseado para celulares */
+            }
+
+            .product-image {
                 width: 45px !important;
                 /* Ancho deseado para celulares */
                 height: 45px !important;
@@ -42,11 +56,25 @@
                 height: 40px !important;
                 /* Alto deseado para tablets */
             }
+
+            .product-image {
+                width: 40px !important;
+                /* Ancho deseado para tablets */
+                height: 40px !important;
+                /* Alto deseado para tablets */
+            }
         }
 
         /* Media query para pantallas de PC */
         @media (min-width: 992px) {
             .square-image {
+                width: 40px !important;
+                /* Ancho deseado para tablets */
+                height: 40px !important;
+                /* Alto deseado para tablets */
+            }
+
+            .product-image {
                 width: 40px !important;
                 /* Ancho deseado para tablets */
                 height: 40px !important;
@@ -175,13 +203,25 @@
                         <?php
                         }
                         ?>
-                        <li class="nav-header">Inventario</li>
-                        <li class="nav-item">
-                            <a href="<?php echo base_url('admin/suppliers/index'); ?>" class="nav-link text-danger">
-                                <i class="fas fa-people-carry"></i>
-                                <p>Proveedores</p>
-                            </a>
-                        </li>
+                        <?php
+                        if (session('id_rol') == 1 || session('id_rol') == 3) {
+                        ?>
+                            <li class="nav-header">Inventario</li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/suppliers/index'); ?>" class="nav-link text-danger">
+                                    <i class="fas fa-people-carry"></i>
+                                    <p>Proveedores</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/products/index'); ?>" class="nav-link text-danger">
+                                    <i class="fas fa-cubes"></i>
+                                    <p>Productos</p>
+                                </a>
+                            </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -230,6 +270,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
     <?= $this->renderSection('script'); ?>
 </body>
 
