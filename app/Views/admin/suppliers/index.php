@@ -1,7 +1,7 @@
 <?= $this->extend('templates/admin_template'); ?>
 
 <?= $this->section('content-header'); ?>
-<h1>Lista de usuarios <i class="fas fa-users"></i></h1>
+<h1>Proveedores <i class="fas fa-people-carry"></i></h1>
 <?= $this->endSection(); ?>
 
 <?= $this->section('content'); ?>
@@ -9,10 +9,10 @@
     <div class="card-header">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <h2 class="text-info">Usuarios registrados</h2>
+                <h2 class="text-info">Proveedores registrados</h2>
             </div>
             <div class="col-sm-12 col-md-6 text-right">
-                <a href="<?php echo base_url('admin/users/create'); ?>" class="btn btn-outline-warning">Crear nuevo usuario <i class="fas fa-user-plus"></i></a>
+                <a href="<?php echo base_url('admin/suppliers/create'); ?>" class="btn btn-outline-warning">Crear nuevo proveedor <i class="fas fa-user-plus"></i></a>
             </div>
         </div>
     </div>
@@ -21,36 +21,28 @@
             <table class="table table-striped table-hover" id="tableData">
                 <thead class="thead-dark">
                     <tr>
-                        <th>&nbsp;</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Rol</th>
+                        <th>NIT</th>
+                        <th>Proveedor</th>
+                        <th>Teléfono</th>
+                        <th>Vendedor</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($users as $user) :
+                    foreach ($supliers as $suplier) :
                     ?>
                         <tr>
-                            <td>
-                                <?php
-                                if ($user['image'] == null) {
-                                    echo '<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="square-image" alt="User Image">';
-                                } else {
-                                    echo '<img src="' . base_url('dist/img/users/' . $user['image']) . '" class="square-image" alt="User Image">';
-                                }
-                                ?>
-                            </td>
-                            <td><?= $user['name']; ?></td>
-                            <td><?= $user['email']; ?></td>
-                            <td><?= $user['rolAsignado']; ?></td>
+                            <td><?= $suplier['taxnumber']; ?></td>
+                            <td><?= $suplier['company']; ?></td>
+                            <td><a href="tel:<?= $suplier['phone']; ?>"><?= $suplier['phone']; ?></a></td>
+                            <td><?= $suplier['seller']; ?></td>
                             <td>
                                 <div class="d-flex justify-content-between">
-                                    <a href="<?php echo base_url('admin/users/show/' . $user['id_user']); ?>" class="btn btn-primary btn-sm me-1"><span class="d-none d-md-inline">Editar</span>
+                                    <a href="<?php echo base_url('admin/suppliers/edit/' . $suplier['id_supplier']); ?>" class="btn btn-primary btn-sm me-1"><span class="d-none d-md-inline">Editar</span>
                                         <i class="fas fa-edit"></i></a>
 
-                                    <button type="button" class="btn btn-danger btn-sm ms-1" onclick="confirmarEliminacion('<?php echo base_url('admin/users/delete/' . $user['id_user']); ?>')"><span class="d-none d-md-inline">Eliminar</span>
+                                    <button type="button" class="btn btn-danger btn-sm ms-1" onclick="confirmarEliminacion('<?php echo base_url('admin/suppliers/delete/' . $suplier['id_supplier']); ?>')"><span class="d-none d-md-inline">Eliminar</span>
                                         <i class="fas fa-trash-alt"></i></button>
                                 </div>
                             </td>
@@ -60,13 +52,11 @@
                     ?>
                 </tbody>
                 <thead class="thead-dark">
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Rol</th>
-                        <th>&nbsp;</th>
-                    </tr>
+                    <th>NIT</th>
+                    <th>Proveedor</th>
+                    <th>Teléfono</th>
+                    <th>Vendedor</th>
+                    <th>&nbsp;</th>
                 </tfoot>
             </table>
         </div>
@@ -87,8 +77,8 @@ if (isset($_SESSION['message'])) {
 <script type="text/javascript">
     function confirmarEliminacion(url) {
         Swal.fire({
-            title: '¿Eliminar al usuario?',
-            text: "¿Está seguro que quiere eliminar al usuario? Ya no podrá usar la información una vez la elimine",
+            title: '¿Eliminar al proveedor?',
+            text: "¿Está seguro que quiere eliminar al proveedor? Ya no podrá usar la información una vez la elimine",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

@@ -23,7 +23,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text bg-info"><i class="fas fa-user"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="<?= $user['name']; ?>">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="<?= old('name', $user['name']) ?>">
                                 </div>
                                 <?php if (session('errors.name')) : ?>
                                     <small class="text-danger"><?= session('errors.name') ?></small>
@@ -37,7 +37,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text bg-info"><i class="fas fa-envelope"></i></div>
                                     </div>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user['email']; ?>">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= old('email', $user['email']) ?>">
                                 </div>
                                 <?php if (session('errors.email')) : ?>
                                     <small class="text-danger"><?= session('errors.email') ?></small>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 text-center mt-3">
-                                <button type="submit" class="btn btn-success" id="submit" name="submit">Guardar <i class="fas fa-save"></i></button>
+                                <button type="submit" class="btn btn-success" id="submit" name="submit">Actualizar <i class="fas fa-save"></i></button>
                             </div>
                         </div>
                     </form>
@@ -144,7 +144,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <button type="submit" class="btn btn-danger" id="submitPass" name="submitPass">Guardar <i class="fas fa-save"></i></button>
+                            <button type="submit" class="btn btn-danger" id="submitPass" name="submitPass">Actualizar <i class="fas fa-save"></i></button>
                         </div>
                     </div>
                 </form>

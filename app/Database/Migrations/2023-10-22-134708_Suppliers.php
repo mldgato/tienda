@@ -28,13 +28,22 @@ class Suppliers extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'seller' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'email' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             'phone' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'seller' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
+            'state' => [
+                'type' => 'TINYINT',
+                'default' => 1,
+                'constraint' => 1,
             ],
         ]);
         $this->forge->addKey('id_supplier', true);

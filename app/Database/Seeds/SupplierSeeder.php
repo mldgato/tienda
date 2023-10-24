@@ -9,7 +9,7 @@ class SupplierSeeder extends Seeder
 {
     public function run()
     {
-        for ($i = 0; $i < 8; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $user = $this->generateFakeUser();
             $this->db->table('suppliers')->insert($user);
         }
@@ -23,8 +23,9 @@ class SupplierSeeder extends Seeder
             'taxnumber' => $fakerObject->numberBetween(11111111, 99999999),
             'company' => $fakerObject->company,
             'address' => $fakerObject->address,
+            'seller' => $fakerObject->name,
+            'email' => $fakerObject->email,
             'phone' => $fakerObject->phoneNumber,
-            'seller' => $fakerObject->name
         );
     }
 }

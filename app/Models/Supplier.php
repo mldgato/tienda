@@ -13,7 +13,7 @@ class Supplier extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['taxnumber', 'company', 'address', 'phone', 'seller'];
+    protected $allowedFields    = ['taxnumber', 'company', 'address', 'seller', 'email', 'phone', 'state'];
 
     // Dates
     protected $useTimestamps = false;

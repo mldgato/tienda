@@ -175,6 +175,13 @@
                         <?php
                         }
                         ?>
+                        <li class="nav-header">Inventario</li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('admin/suppliers/index'); ?>" class="nav-link text-danger">
+                                <i class="fas fa-people-carry"></i>
+                                <p>Proveedores</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
