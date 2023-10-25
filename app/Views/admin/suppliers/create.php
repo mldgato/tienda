@@ -1,5 +1,5 @@
 <?= $this->extend('templates/admin_template'); ?>
-
+ 
 <?= $this->section('content-header'); ?>
 <h1>Crear un nuevo proveedor <i class="fas fa-people-carry"></i></h1>
 <?= $this->endSection(); ?>

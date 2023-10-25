@@ -1,0 +1,222 @@
+CRITICAL - 2023-10-24 02:15:41 --> Undefined variable $supliers
+in APPPATH\Views\admin\suppliers\index.php on line 33.
+ 1 APPPATH\Views\admin\suppliers\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $supliers', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\suppliers\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\suppliers\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/suppliers/index', [], true)
+ 5 APPPATH\Controllers\SupplierController.php(76): view('admin/suppliers/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SupplierController->edit('11')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 02:17:09 --> Undefined variable $supliers
+in APPPATH\Views\admin\suppliers\index.php on line 33.
+ 1 APPPATH\Views\admin\suppliers\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $supliers', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\suppliers\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\suppliers\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/suppliers/index', [], true)
+ 5 APPPATH\Controllers\SupplierController.php(76): view('admin/suppliers/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SupplierController->edit('11')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 02:41:34 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 939.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(826): CodeIgniter\Database\BaseBuilder->_whereIn('suppliers.id_supplier', Object(App\Models\Supplier), false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(371): CodeIgniter\Database\BaseBuilder->whereIn('suppliers.id_supplier', Object(App\Models\Supplier))
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate(Object(App\Models\Supplier), [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update(Object(App\Models\Supplier), [...])
+ 5 APPPATH\Controllers\SupplierController.php(136): CodeIgniter\Model->update(Object(App\Models\Supplier), [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SupplierController->update('11')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 02:42:53 --> Object of class App\Models\Supplier could not be converted to string
+in APPPATH\Controllers\SupplierController.php on line 139.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SupplierController->update('11')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 02:43:15 --> Object of class App\Models\Supplier could not be converted to string
+in APPPATH\Controllers\SupplierController.php on line 139.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SupplierController->update('11')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 05:25:38 --> Undefined variable $user
+in APPPATH\Views\admin\products\index.php on line 44.
+ 1 APPPATH\Views\admin\products\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\products\\index.php', 44)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\products\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/products/index', [], true)
+ 5 APPPATH\Controllers\ProductController.php(16): view('admin/products/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 05:26:02 --> Undefined variable $suplier
+in APPPATH\Views\admin\products\index.php on line 53.
+ 1 APPPATH\Views\admin\products\index.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $suplier', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\products\\index.php', 53)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\products\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/products/index', [], true)
+ 5 APPPATH\Controllers\ProductController.php(16): view('admin/products/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-24 18:39:52 --> mysqli_sql_exception: Unknown column 'cod' in 'where clause' in C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(208): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\Validation.php(311): CodeIgniter\Validation\StrictRules\Rules->is_unique('10101010', 'cod', Array, NULL, 'cod')
+#6 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('cod', 'cod', '10101010', Array, Array)
+#7 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Controller.php(152): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\tienda\app\Controllers\ProductController.php(46): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#10 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\tienda\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-24 18:39:53 --> Unknown column 'cod' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `cod` = :cod:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(208): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(311): CodeIgniter\Validation\StrictRules\Rules->is_unique('10101010', 'cod', [...], null, 'cod')
+ 4 SYSTEMPATH\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('cod', 'cod', '10101010', [...], [...])
+ 5 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\ProductController.php(46): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-24 18:41:57 --> mysqli_sql_exception: Unknown column 'cod' in 'where clause' in C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(208): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\Validation.php(311): CodeIgniter\Validation\StrictRules\Rules->is_unique('101010', 'cod', Array, NULL, 'cod')
+#6 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('cod', 'cod', '101010', Array, Array)
+#7 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Controller.php(152): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\tienda\app\Controllers\ProductController.php(46): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#10 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\tienda\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-24 18:41:57 --> Unknown column 'cod' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `cod` = :cod:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(208): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(311): CodeIgniter\Validation\StrictRules\Rules->is_unique('101010', 'cod', [...], null, 'cod')
+ 4 SYSTEMPATH\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('cod', 'cod', '101010', [...], [...])
+ 5 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\ProductController.php(46): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 18:48:13 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\suppliers\edit.php on line 13.
+ 1 APPPATH\Views\admin\suppliers\edit.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\suppliers\\edit.php', 13)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\suppliers\\edit.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/suppliers/edit', [], true)
+ 5 APPPATH\Controllers\SupplierController.php(76): view('admin/suppliers/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SupplierController->edit('53')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-24 18:50:11 --> mysqli_sql_exception: Unknown column 'cod' in 'where clause' in C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(208): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\Validation.php(311): CodeIgniter\Validation\StrictRules\Rules->is_unique('8342', 'cod', Array, NULL, 'cod')
+#6 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('cod', 'cod', '8342', Array, Array)
+#7 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Controller.php(152): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\tienda\app\Controllers\ProductController.php(46): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\ProductController->store()
+#10 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#11 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\tienda\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-24 18:50:11 --> Unknown column 'cod' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `cod` = :cod:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(208): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(311): CodeIgniter\Validation\StrictRules\Rules->is_unique('8342', 'cod', [...], null, 'cod')
+ 4 SYSTEMPATH\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('cod', 'cod', '8342', [...], [...])
+ 5 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\ProductController.php(46): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 19:03:22 --> Undefined variable $user
+in APPPATH\Views\admin\products\edit.php on line 155.
+ 1 APPPATH\Views\admin\products\edit.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\products\\edit.php', 155)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\products\\edit.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/products/edit', [], true)
+ 5 APPPATH\Controllers\ProductController.php(88): view('admin/products/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ProductController->edit('101')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 22:33:17 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 218.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2023-10-24 22:33:18 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\I18n\TimeTrait.php:74
+Stack trace:
+#0 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\I18n\TimeTrait.php(115): CodeIgniter\I18n\Time->__construct(NULL, NULL, NULL)
+#1 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(468): CodeIgniter\I18n\Time::now()
+#2 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(446): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Debug\ExceptionHandler.php(81): CodeIgniter\HTTP\Response->send()
+#4 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Debug\Exceptions.php(148): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\tienda\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\I18n\TimeTrait.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-10-24 22:36:56 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 218.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2023-10-24 22:36:56 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\I18n\TimeTrait.php:74
+Stack trace:
+#0 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\I18n\TimeTrait.php(115): CodeIgniter\I18n\Time->__construct(NULL, NULL, NULL)
+#1 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(468): CodeIgniter\I18n\Time::now()
+#2 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(446): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Debug\ExceptionHandler.php(81): CodeIgniter\HTTP\Response->send()
+#4 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Debug\Exceptions.php(148): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\tienda\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\I18n\TimeTrait.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

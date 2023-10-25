@@ -34,3 +34,4 @@ $routes->get('admin/products/edit/(:num)', 'ProductController::edit/$1');
 $routes->post('admin/products/update/(:num)', 'ProductController::update/$1');
 $routes->get('admin/products/delete/(:num)', 'ProductController::delete/$1');
 $routes->post('admin/products/upload_image_action/(:num)', 'ProductController::uploadImage_action/$1');
+

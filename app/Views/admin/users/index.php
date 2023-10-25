@@ -1,5 +1,5 @@
 <?= $this->extend('templates/admin_template'); ?>
-
+ 
 <?= $this->section('content-header'); ?>
 <h1>Lista de usuarios <i class="fas fa-users"></i></h1>
 <?= $this->endSection(); ?>

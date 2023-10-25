@@ -18,6 +18,6 @@ if (isset($_SESSION['message'])) {
 <?php
 }
 session()->remove('message');
-session()->remove('alert-class');
+session()->remove('alert-class'); 
 ?>
 <?= $this->endSection(); ?>

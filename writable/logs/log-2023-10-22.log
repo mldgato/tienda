@@ -1,0 +1,15 @@
+ERROR - 2023-10-22 14:00:27 --> mysqli_sql_exception: Duplicate entry 'Administrador' for key 'rolname' in C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ro...', 0)
+#1 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ro...')
+#2 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ro...')
+#3 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ro...', Array, false)
+#4 C:\xampp\htdocs\tienda\app\Database\Seeds\RolSeeder.php(15): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\Seeder.php(146): App\Database\Seeds\RolSeeder->run()
+#6 C:\xampp\htdocs\tienda\app\Database\Seeds\DatabaseSeeder.php(11): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Database\Seeder.php(146): App\Database\Seeds\DatabaseSeeder->run()
+#8 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#9 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#10 C:\xampp\htdocs\tienda\vendor\codeigniter4\framework\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#11 C:\xampp\htdocs\tienda\spark(102): CodeIgniter\CLI\Console->run()
+#12 {main}

@@ -149,7 +149,7 @@ INSERT INTO `products` (`id_product`, `cod`, `product_name`, `brand`, `quantity`
 --
 -- Índices para tablas volcadas
 --
-
+ 
 --
 -- Indices de la tabla `products`
 --

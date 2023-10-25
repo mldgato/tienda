@@ -1,5 +1,5 @@
 <?= $this->extend('templates/admin_template'); ?>
-
+ 
 <?= $this->section('content-header'); ?>
 <h1>Crear un nuevo producto <i class="fas fa-cubes"></i></h1>
 <?= $this->endSection(); ?>
