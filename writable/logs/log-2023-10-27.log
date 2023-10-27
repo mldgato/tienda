@@ -1,0 +1,62 @@
+CRITICAL - 2023-10-27 03:28:41 --> Call to undefined method App\Models\Rol::findAllWithRoles
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\RolController.php(14): CodeIgniter\Model->__call('findAllWithRoles', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RolController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-27 03:37:32 --> Undefined variable $roles
+in APPPATH\Views\admin\users\create.php on line 49.
+ 1 APPPATH\Views\admin\users\create.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php', 49)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/users/create', [], true)
+ 5 APPPATH\Controllers\RolController.php(24): view('admin/users/create')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RolController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-27 03:38:51 --> Undefined variable $roles
+in APPPATH\Views\admin\users\create.php on line 49.
+ 1 APPPATH\Views\admin\users\create.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php', 49)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/users/create', [], true)
+ 5 APPPATH\Controllers\RolController.php(24): view('admin/users/create')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RolController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-27 03:39:19 --> Undefined variable $roles
+in APPPATH\Views\admin\users\create.php on line 49.
+ 1 APPPATH\Views\admin\users\create.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php', 49)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/users/create', [], true)
+ 5 APPPATH\Controllers\RolController.php(24): view('admin/users/create')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RolController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-27 03:40:08 --> Undefined variable $roles
+in APPPATH\Views\admin\users\create.php on line 49.
+ 1 APPPATH\Views\admin\users\create.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php', 49)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\users\\create.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/users/create', [], true)
+ 5 APPPATH\Controllers\RolController.php(24): view('admin/users/create')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RolController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-27 04:14:24 --> Undefined variable $supplier
+in APPPATH\Views\admin\roles\edit.php on line 13.
+ 1 APPPATH\Views\admin\roles\edit.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $supplier', 'C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\roles\\edit.php', 13)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tienda\\app\\Views\\admin\\roles\\edit.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/roles/edit', [], true)
+ 5 APPPATH\Controllers\RolController.php(62): view('admin/roles/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RolController->edit('3')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

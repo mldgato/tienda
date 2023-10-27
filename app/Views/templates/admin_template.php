@@ -198,6 +198,12 @@
                                     <p>Crear nuevo</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/roles/index'); ?>" class="nav-link text-info">
+                                    <i class="fas fa-user-tag"></i>
+                                    <p>Roles</p>
+                                </a>
+                            </li>
                         <?php
                         }
                         ?>

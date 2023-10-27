@@ -42,3 +42,10 @@ $routes->post('admin/customers/store', 'CustomerController::store');
 $routes->get('admin/customers/edit/(:num)', 'CustomerController::edit/$1');
 $routes->post('admin/customers/update/(:num)', 'CustomerController::update/$1');
 $routes->get('admin/customers/delete/(:num)', 'CustomerController::delete/$1');
+
+$routes->get('admin/roles/index', 'RolController::index');
+$routes->get('admin/roles/create', 'RolController::create');
+$routes->post('admin/roles/store', 'RolController::store');
+$routes->get('admin/roles/edit/(:num)', 'RolController::edit/$1');
+$routes->post('admin/roles/update/(:num)', 'RolController::update/$1');
+$routes->get('admin/roles/delete/(:num)', 'RolController::delete/$1');

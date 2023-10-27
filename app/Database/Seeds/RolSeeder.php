@@ -8,15 +8,13 @@ class RolSeeder extends Seeder
 {
     public function run()
     {
-        $rolname = 'Administrador';
         $data = [
-            'rolname' => $rolname
+            'rolname' => 'Administrador'
         ];
         $this->db->table('roles')->insert($data);
 
-        $rolname = 'Vendedor';
         $data = [
-            'rolname' => $rolname
+            'rolname' => 'Vendedor'
         ];
         $this->db->table('roles')->insert($data);
     }
