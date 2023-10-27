@@ -17,9 +17,7 @@
     <style>
         .square-image {
             width: 100px !important;
-            /* Ancho deseado */
             height: 100px !important;
-            /* Alto deseado */
             overflow: hidden;
             border-radius: 50%;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
@@ -27,7 +25,7 @@
 
         .product-image {
             width: 100px !important;
-            height: 100px !important;
+            height: auto !important;
             overflow: hidden;
         }
 
@@ -43,7 +41,7 @@
             .product-image {
                 width: 45px !important;
                 /* Ancho deseado para celulares */
-                height: 45px !important;
+                height: auto !important;
                 /* Alto deseado para celulares */
             }
         }
@@ -58,9 +56,9 @@
             }
 
             .product-image {
-                width: 40px !important;
+                width: 70px !important;
                 /* Ancho deseado para tablets */
-                height: 40px !important;
+                height: auto !important;
                 /* Alto deseado para tablets */
             }
         }
@@ -75,9 +73,9 @@
             }
 
             .product-image {
-                width: 40px !important;
+                width: 70px !important;
                 /* Ancho deseado para tablets */
-                height: 40px !important;
+                height: auto !important;
                 /* Alto deseado para tablets */
             }
         }
@@ -217,6 +215,19 @@
                                 <a href="<?php echo base_url('admin/products/index'); ?>" class="nav-link text-danger">
                                     <i class="fas fa-cubes"></i>
                                     <p>Productos</p>
+                                </a>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if (session('id_rol') == 1 || session('id_rol') == 2) {
+                        ?>
+                            <li class="nav-header">Tienda</li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/customers/index'); ?>" class="nav-link text-warning">
+                                    <i class="fas fa-child"></i>
+                                    <p>Clientes</p>
                                 </a>
                             </li>
                         <?php
