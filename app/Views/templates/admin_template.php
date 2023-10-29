@@ -236,6 +236,25 @@
                                     <p>Clientes</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/sales/products'); ?>" class="nav-link text-warning">
+                                    <i class="fas fa-store"></i>
+                                    <p>Tienda</p>
+                                </a>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if (session('id_rol') == 1 || session('id_rol') == 2) {
+                        ?>
+                            <li class="nav-header">Reportes</li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('admin/sales/myReports'); ?>" class="nav-link text-success">
+                                    <i class="far fa-id-badge"></i>
+                                    <p>Mis reportes</p>
+                                </a>
+                            </li>
                         <?php
                         }
                         ?>

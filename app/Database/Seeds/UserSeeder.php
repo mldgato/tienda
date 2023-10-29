@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         $rolesModel = new Rol();
         $roles = $rolesModel->findAll();
 
-        for ($i = 0; $i < 8; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $user = $this->generateFakeUser($roles);
             $this->db->table('users')->insert($user);
         }
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             'name' => $fakerObject->name,
             'email' => $fakerObject->email,
             'password' => $password,
-            'id_rol' => $randomRoleId
+            'id_rol' => 2
         );
     }
 }
