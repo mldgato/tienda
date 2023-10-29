@@ -84,7 +84,7 @@
     if (session('id_rol') == 1 || session('id_rol') == 2) {
     ?>
         <div class="col-sm-12 col-md-4">
-            <div class="small-box bg-warning">
+            <div class="small-box bg-danger">
                 <div class="inner">
                     <h3>Clientes</h3>
                     <p>Listado</p>
