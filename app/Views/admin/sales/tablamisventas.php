@@ -19,7 +19,7 @@
                 <td class="text-right"><?= number_format($sale['total'], 2, '.', ',') ?></td>
                 <td class="text-right"><?= number_format($sale['pay'] - $sale['total'], 2, '.', ',') ?></td>
                 <td class="text-center">
-                    <a href="<?php echo base_url('admin/sales/show/' . $sale['id_sale']); ?>" class="btn btn-primary btn-sm me-1"><span class="d-none d-md-inline">Ver venta</span>
+                    <a href="<?php echo base_url('admin/sales/show/' . $sale['id_sale']); ?>" class="btn btn-primary btn-sm me-1" target="_blank"><span class="d-none d-md-inline">Ver venta</span>
                         <i class="fas fa-eye"></i></a>
                 </td>
             </tr>

@@ -12,7 +12,7 @@
                 <h2 class="text-info">Datos de la venta</h2>
             </div>
             <div class="col-sm-12 col-md-6 text-right">
-                <a href="<?= base_url('admin/customers/show/' . $sale['id_customer']) ?>" class="btn btn-primary">Regresar <i class="fas fa-backward"></i></a>
+                <!-- <a href="<?= base_url('admin/customers/show/' . $sale['id_customer']) ?>" class="btn btn-primary">Regresar <i class="fas fa-backward"></i></a> -->
             </div>
         </div>
     </div>

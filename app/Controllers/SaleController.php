@@ -315,4 +315,8 @@ class SaleController extends BaseController
 
         echo view('admin/sales/tablamisventas', ['sales' => $sales]); // Crea una vista "tabla_ventas.php" para mostrar la tabla
     }
+    public function salesbydate()
+    {
+        return view('admin/sales/salesbydate');
+    }
 }

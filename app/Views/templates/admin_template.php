@@ -252,9 +252,21 @@
                             <li class="nav-item">
                                 <a href="<?php echo base_url('admin/sales/myReports'); ?>" class="nav-link text-success">
                                     <i class="far fa-id-badge"></i>
-                                    <p>Mis reportes</p>
+                                    <p>Mis ventas</p>
                                 </a>
                             </li>
+                            <?php
+                            if (session('id_rol') == 1) {
+                            ?>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url('admin/sales/salesbydate'); ?>" class="nav-link text-success">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <p>Ventas por fecha</p>
+                                    </a>
+                                </li>
+                            <?php
+                            }
+                            ?>
                         <?php
                         }
                         ?>
