@@ -33,7 +33,80 @@
                 <a href="<?php echo base_url('admin/users/index'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-secondary">
+                <div class="inner">
+                    <h3>Roles</h3>
+                    <p>Creación y administración</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user-tag"></i>
+                </div>
+                <a href="<?php echo base_url('admin/roles/index'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+    <?php
+    }
+    ?>
+
+    <?php
+    if (session('id_rol') == 1 || session('id_rol') == 3) {
+    ?>
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>Proveedores</h3>
+                    <p>Creación y administración</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-people-carry"></i>
+                </div>
+                <a href="<?php echo base_url('admin/suppliers/index'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>Productos</h3>
+                    <p>Creación y administración</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <a href="<?php echo base_url('admin/products/index'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    <?php
+    if (session('id_rol') == 1 || session('id_rol') == 2) {
+    ?>
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>Clientes</h3>
+                    <p>Listado</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <a href="<?php echo base_url('admin/customers/index'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>Tienda</h3>
+                    <p>Venta de productos</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <a href="<?php echo base_url('admin/sales/products'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
     <?php
     }
     ?>

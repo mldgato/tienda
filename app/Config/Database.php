@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'tienda',
+        'username'     => 'deproweb_tiendauser',
+        'password'     => 'lrHXZeCE0gQb',
+        'database'     => 'deproweb_tienda',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
