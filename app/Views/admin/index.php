@@ -96,15 +96,51 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-4">
-            <div class="small-box bg-info">
+            <div class="small-box bg-indigo">
                 <div class="inner">
                     <h3>Tienda</h3>
                     <p>Venta de productos</p>
                 </div>
                 <div class="icon">
-                    <i class="fas fa-child"></i>
+                    <i class="fas fa-store"></i>
                 </div>
                 <a href="<?php echo base_url('admin/sales/products'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    <?php
+    if (session('id_rol') == 2) {
+    ?>
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-orange">
+                <div class="inner">
+                    <h3>Reporte</h3>
+                    <p>Mis ventas</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-id-badge"></i>
+                </div>
+                <a href="<?php echo base_url('admin/sales/myReports'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    <?php
+    if (session('id_rol') == 1) {
+    ?>
+        <div class="col-sm-12 col-md-4">
+            <div class="small-box bg-orange">
+                <div class="inner">
+                    <h3>Reporte</h3>
+                    <p>Ventas por fecha</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <a href="<?php echo base_url('admin/sales/salesbydate'); ?>" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     <?php

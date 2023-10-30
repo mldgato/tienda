@@ -13,7 +13,7 @@ class Sale extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['pay','date', 'id_user', 'id_customer'];
+    protected $allowedFields    = ['pay', 'date', 'id_user', 'id_customer'];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,4 +38,15 @@ class Sale extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function findAllWithData($del, $al)
+    {
+        return $this->select('sales.*, users.name, customers.customer')
+            ->join('users', 'users.id_user = sales.id_user')
+            ->join('customers', 'customers.id_customer = sales.id_customer')
+            ->where('sales.date >=', $del) // Usar >= en lugar de igual
+            ->where('sales.date <=', $al)  // Usar <= en lugar de igual
+            ->orderBy('sales.date', 'DESC')
+            ->findAll();
+    }
 }

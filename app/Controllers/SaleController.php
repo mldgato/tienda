@@ -307,16 +307,39 @@ class SaleController extends BaseController
             $sale['total'] = $total;
         }
 
-        /* $data['sales'] = $model
-            ->where('date >=', $fechaDel)
-            ->where('date <=', $fechaAl)
-            ->where('id_user', session('id_user'))
-            ->findAll(); */
-
-        echo view('admin/sales/tablamisventas', ['sales' => $sales]); // Crea una vista "tabla_ventas.php" para mostrar la tabla
+        echo view('admin/sales/tablamisventas', ['sales' => $sales]);
     }
     public function salesbydate()
     {
         return view('admin/sales/salesbydate');
+    }
+
+    public function searchSalebyDate()
+    {
+        $fechaDel = $this->request->getPost('del');
+        $fechaAl = $this->request->getPost('al');
+
+        $model = new Sale();
+
+        $sales = $model->where('date >=', $fechaDel)
+            ->where('date <=', $fechaAl)
+            ->where('id_user', session('id_user'))
+            ->orderBy('date', 'DESC')->findAll();
+
+        $sales =$model->findAllWithData($fechaDel, $fechaAl);
+
+        $salesDetailModel = new Saledetail();
+
+        foreach ($sales as &$sale) {
+            $details = $salesDetailModel->where('id_sale', $sale['id_sale'])->findAll();
+            $total = 0;
+
+            foreach ($details as $detail) {
+                $total += $detail['price'] * $detail['quantity'];
+            }
+
+            $sale['total'] = $total;
+        }
+        echo view('admin/sales/tablalasventas', ['sales' => $sales]);
     }
 }

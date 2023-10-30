@@ -249,12 +249,18 @@
                         if (session('id_rol') == 1 || session('id_rol') == 2) {
                         ?>
                             <li class="nav-header">Reportes</li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url('admin/sales/myReports'); ?>" class="nav-link text-success">
-                                    <i class="far fa-id-badge"></i>
-                                    <p>Mis ventas</p>
-                                </a>
-                            </li>
+                            <?php
+                            if (session('id_rol') == 2) {
+                            ?>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url('admin/sales/myReports'); ?>" class="nav-link text-success">
+                                        <i class="far fa-id-badge"></i>
+                                        <p>Mis ventas</p>
+                                    </a>
+                                </li>
+                            <?php
+                            }
+                            ?>
                             <?php
                             if (session('id_rol') == 1) {
                             ?>

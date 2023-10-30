@@ -57,7 +57,7 @@ $routes->get('admin/sales/remove-product/(:num)', 'SaleController::deleteproduct
 $routes->get('admin/sales/create', 'SaleController::create');
 $routes->get('admin/sales/search-customer/(:any)', 'SaleController::searchCustomer/$1');
 $routes->post('admin/sales/store', 'SaleController::store');
-$routes->get('admin/sales/cancelCart/(:num)', 'SaleController::cancelCart/$1');
+$routes->get('admin/sales/cancelCart', 'SaleController::cancelCart');
 $routes->get('admin/sales/show/(:num)', 'SaleController::show/$1');
 $routes->get('admin/sales/myReports', 'SaleController::myReports');
 $routes->post('admin/sales/buscarVentasAjax', 'SaleController::buscarVentasAjax');
