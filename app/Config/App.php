@@ -16,8 +16,8 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'https://tienda.deproweb.com';
-    /* public string $baseURL = 'http://tienda.test'; */
+    /* public string $baseURL = 'https://tienda.deproweb.com'; */
+    public string $baseURL = 'http://tienda.test';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

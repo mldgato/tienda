@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use App\Models\Saledetail;
+use App\Models\Product;
 
 class Home extends BaseController
 {
@@ -14,8 +16,37 @@ class Home extends BaseController
 
     public function inicio()
     {
-        return view('admin/index');
+        $saledetailModel = new Saledetail();
+        $productModel = new Product();
+
+        // Obtener los 10 productos más vendidos
+        $query = $saledetailModel
+            ->select('id_product, SUM(quantity) as total_quantity')
+            ->groupBy('id_product')
+            ->orderBy('total_quantity', 'DESC')
+            ->limit(10)
+            ->find();
+
+        $topProducts = [];
+
+        foreach ($query as $row) {
+            $product = $productModel->find($row['id_product']);
+            $product['total_quantity'] = $row['total_quantity'];
+            $topProducts[] = $product;
+        }
+
+        // Obtener las ventas totales por usuarios con id_rol igual a 2
+        $db = db_connect();
+        $query = $db->query("SELECT u.name, SUM(s.pay) as total_sales
+                        FROM users u
+                        INNER JOIN sales s ON u.id_user = s.id_user
+                        WHERE u.id_rol = 2
+                        GROUP BY u.id_user")->getResult();
+
+        // Cargar la vista con los productos más vendidos y los datos de ventas totales
+        return view('admin/index', ['topProducts' => $topProducts, 'userSalesData' => $query]);
     }
+
 
     public function login()
     {
@@ -36,7 +67,7 @@ class Home extends BaseController
             ];
             $session = session();
             $session->set($data);
-            
+
             return redirect()->to(base_url('admin'))->with('message', 'Bienvenido al sistema')->with('alert-class', 'success');
         } else {
             return redirect()->to(base_url('/'))->with('message', 'Usuario o contraseña incorrectos')->with('alert-class', 'error');

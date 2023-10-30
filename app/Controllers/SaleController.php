@@ -176,7 +176,13 @@ class SaleController extends BaseController
         // Verifica si el cliente ya existe en la base de datos
         $taxnumber = $this->request->getVar('taxnumber');
         $customerModel = new Customer();
-        $existingCustomer = $customerModel->where('taxnumber', $taxnumber)->first();
+        if ($taxnumber == "C/F") {
+            $existingCustomer = "";
+        } else {
+            $existingCustomer = $customerModel->where('taxnumber', $taxnumber)->first();
+        }
+
+        
 
         if (!$existingCustomer) {
             // Si el cliente no existe, crea un nuevo cliente
@@ -214,6 +220,7 @@ class SaleController extends BaseController
         $prices = $this->request->getVar('price');
 
         $saledetailModel = new Saledetail();
+        $productModel = new Product();
 
         foreach ($products as $key => $productId) {
             $detailData = [
@@ -224,6 +231,13 @@ class SaleController extends BaseController
             ];
 
             $saledetailModel->insert($detailData);
+            $product = $productModel->find($productId);
+            $resta = $product['quantity'] - $quantities[$key];
+
+            $productData = [
+                'quantity' => $resta,
+            ];
+            $productModel->update($productId, $productData);
         }
 
         // Limpia el carrito o la sesión del carrito aquí
@@ -326,7 +340,7 @@ class SaleController extends BaseController
             ->where('id_user', session('id_user'))
             ->orderBy('date', 'DESC')->findAll();
 
-        $sales =$model->findAllWithData($fechaDel, $fechaAl);
+        $sales = $model->findAllWithData($fechaDel, $fechaAl);
 
         $salesDetailModel = new Saledetail();
 

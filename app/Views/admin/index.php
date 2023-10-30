@@ -6,6 +6,28 @@
 
 <?= $this->section('content'); ?>
 <div class="row">
+    <div class="col-sm-12 col-md-6">
+        <div class="card card-danger">
+            <div class="card-header">
+                <h3 class="card-title"><i class="fas fa-chart-pie"></i> % de ventas de cada vendedor</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="pieChart" style="height: 500px !important;"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title"><i class="fas fa-chart-bar"></i> Los 10 productos más vendidos</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-sm-12 col-md-4">
         <div class="small-box bg-info">
             <div class="inner">
@@ -161,4 +183,68 @@ if (isset($_SESSION['message'])) {
 session()->remove('message');
 session()->remove('alert-class');
 ?>
+<script>
+    // Obtén los datos de PHP y conviértelos a JavaScript
+    var topProducts = <?= json_encode($topProducts) ?>;
+    var productNames = topProducts.map(product => product.product_name);
+    var quantities = topProducts.map(product => product.total_quantity);
+    var colors = generateRandomColors(topProducts.length);
+
+    function generateRandomColors(count) {
+        var colors = [];
+        for (var i = 0; i < count; i++) {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            colors.push(`rgba(${r},${g},${b},0.2)`);
+        }
+        return colors;
+    }
+
+    // Configura el gráfico de barras
+    var ctx = document.getElementById('barChart').getContext('2d');
+    var barChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: productNames,
+            datasets: [{
+                label: 'Cantidad Vendida',
+                data: quantities,
+                backgroundColor: colors,
+                borderColor: colors.map(color => color.replace("0.2", "1")),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                },
+            }
+        }
+    });
+</script>
+<script>
+    // Obtén los datos de PHP y conviértelos a JavaScript
+    var userSalesData = <?= json_encode($userSalesData) ?>;
+    var userNames = userSalesData.map(user => user.name);
+    var salesTotals = userSalesData.map(user => user.total_sales);
+    var pieChartColors = generateRandomColors(userSalesData.length);
+
+    // Configura el gráfico de tipo pie
+    var pieCtx = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: userNames,
+            datasets: [{
+                data: salesTotals,
+                backgroundColor: pieChartColors,
+            }]
+        },
+        options: {
+            responsive: true,
+        }
+    });
+</script>
 <?= $this->endSection(); ?>
