@@ -102,8 +102,11 @@ class UserController extends BaseController
 
                     // Verifica si el usuario tenía una imagen anterior
                     if (!empty($user['image'])) {
-                        // Elimina la imagen anterior si existe
-                        unlink(ROOTPATH . 'public/dist/img/users/' . $user['image']);
+                        $imagePath = ROOTPATH . 'public/dist/img/users/' . $user['image'];
+                        if(file_exists($imagePath))
+                        {
+                            unlink($imagePath);
+                        }
                     }
 
                     $data = [
