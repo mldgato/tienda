@@ -11,8 +11,8 @@
             <div class="card-header">
                 <h3 class="card-title"><i class="fas fa-chart-pie"></i> % de ventas de cada vendedor</h3>
             </div>
-            <div class="card-body">
-                <canvas id="pieChart" style="height: 500px !important;"></canvas>
+            <div class="card-body text-center">
+                <canvas id="pieChart" class="chart-canvas"></canvas>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                 <h3 class="card-title"><i class="fas fa-chart-bar"></i> Los 10 productos más vendidos</h3>
             </div>
             <div class="card-body">
-                <canvas id="barChart"></canvas>
+                <canvas id="barChart" class="chart-canvas"></canvas>
             </div>
         </div>
     </div>
@@ -245,6 +245,17 @@ session()->remove('alert-class');
         options: {
             responsive: true,
         }
+    });
+</script>
+<script>
+    // Ajusta el tamaño de los gráficos después de que se haya cargado la página
+    window.addEventListener('load', function() {
+        var chartContainers = document.querySelectorAll('.chart-canvas');
+        chartContainers.forEach(function(canvas) {
+            var parent = canvas.parentElement;
+            canvas.width = parent.offsetWidth;
+            canvas.height = parent.offsetHeight;
+        });
     });
 </script>
 <?= $this->endSection(); ?>

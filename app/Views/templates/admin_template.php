@@ -29,6 +29,19 @@
             overflow: hidden;
         }
 
+        .chart-canvas {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card.card-danger,
+        .card.card-primary {
+            height: 400px;
+        }
+
         /* Media query para pantallas de celular */
         @media (max-width: 576px) {
             .square-image {
