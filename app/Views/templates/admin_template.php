@@ -51,7 +51,7 @@
                 /* Alto deseado para PC */
             }
 
-            .product-product-image_grid {
+            .product-image_grid {
                 width: 100px !important;
                 /* Ancho deseado para PC */
                 height: auto !important;
@@ -68,7 +68,7 @@
                 /* Alto deseado para tablets */
             }
 
-            .product-product-image_grid {
+            .product-image_grid {
                 width: 80px !important;
                 /* Ancho deseado para tablets */
                 height: auto !important;
@@ -85,7 +85,7 @@
                 /* Alto deseado para celulares */
             }
 
-            .product-product-image_grid {
+            .product-image_grid {
                 width: 100px !important;
                 /* Ancho deseado para celulares */
                 height: auto !important;

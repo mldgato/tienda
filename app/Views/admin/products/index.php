@@ -41,7 +41,7 @@
                                 if ($product['image'] == null) {
                                     echo '<img src="https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944_1280.jpg" class="product-image" alt="Imagen de producto">';
                                 } else {
-                                    echo '<a href="' . base_url('dist/img/products/' . $product['image']) . '" data-lightbox="img_' . $product['id_product'] . '" data-title="' . $product['product_name'] . '"><img src="' . base_url('dist/img/products/' . $product['image']) . '" id="img_' . $product['id_product'] . '" class="product-product-image_grid" alt="'.$product['product_name'].'"></a>';
+                                    echo '<a href="' . base_url('dist/img/products/' . $product['image']) . '" data-lightbox="img_' . $product['id_product'] . '" data-title="' . $product['product_name'] . '"><img src="' . base_url('dist/img/products/' . $product['image']) . '" id="img_' . $product['id_product'] . '" class="product-image_grid" alt="'.$product['product_name'].'"></a>';
                                 }
                                 ?>
                             </td>

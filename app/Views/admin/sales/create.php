@@ -37,7 +37,7 @@
                             <?php $total += $subtotal; ?>
                             <tr>
                                 <td>
-                                    <a href="<?= base_url('dist/img/products/' . $cartItem['product']['image']) ?>" data-lightbox="img_<?= $productId ?>" data-title="<?= $cartItem['product']['product_name'] ?>"><img src="<?= base_url('dist/img/products/' . $cartItem['product']['image']) ?>" id="img_<?= $productId ?>" class="product-image" alt="Imagen de producto"></a>
+                                    <a href="<?= base_url('dist/img/products/' . $cartItem['product']['image']) ?>" data-lightbox="img_<?= $productId ?>" data-title="<?= $cartItem['product']['product_name'] ?>"><img src="<?= base_url('dist/img/products/' . $cartItem['product']['image']) ?>" id="img_<?= $productId ?>" class="product-image_grid" alt="Imagen de producto"></a>
                                 </td>
                                 <td>
                                     <?= $cartItem['product']['product_name'] ?>
