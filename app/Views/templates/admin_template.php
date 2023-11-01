@@ -23,7 +23,7 @@
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .product-image {
+        .product-image_grid {
             width: 100px !important;
             height: auto !important;
             overflow: hidden;
@@ -42,6 +42,40 @@
             height: 400px;
         }
 
+        /* Media query para pantallas de PC */
+        @media (min-width: 992px) {
+            .square-image {
+                width: 80px !important;
+                /* Ancho deseado para PC */
+                height: 80px !important;
+                /* Alto deseado para PC */
+            }
+
+            .product-product-image_grid {
+                width: 100px !important;
+                /* Ancho deseado para PC */
+                height: auto !important;
+                /* Alto deseado para PC */
+            }
+        }
+
+        /* Media query para pantallas de tablet */
+        @media (min-width: 577px) and (max-width: 991px) {
+            .square-image {
+                width: 60px !important;
+                /* Ancho deseado para tablets */
+                height: 60px !important;
+                /* Alto deseado para tablets */
+            }
+
+            .product-product-image_grid {
+                width: 80px !important;
+                /* Ancho deseado para tablets */
+                height: auto !important;
+                /* Alto deseado para tablets */
+            }
+        }
+
         /* Media query para pantallas de celular */
         @media (max-width: 576px) {
             .square-image {
@@ -51,45 +85,11 @@
                 /* Alto deseado para celulares */
             }
 
-            .product-image {
-                width: 60px !important;
+            .product-product-image_grid {
+                width: 100px !important;
                 /* Ancho deseado para celulares */
                 height: auto !important;
                 /* Alto deseado para celulares */
-            }
-        }
-
-        /* Media query para pantallas de tablet */
-        @media (min-width: 577px) and (max-width: 991px) {
-            .square-image {
-                width: 40px !important;
-                /* Ancho deseado para tablets */
-                height: 40px !important;
-                /* Alto deseado para tablets */
-            }
-
-            .product-image {
-                width: 70px !important;
-                /* Ancho deseado para tablets */
-                height: auto !important;
-                /* Alto deseado para tablets */
-            }
-        }
-
-        /* Media query para pantallas de PC */
-        @media (min-width: 992px) {
-            .square-image {
-                width: 40px !important;
-                /* Ancho deseado para tablets */
-                height: 40px !important;
-                /* Alto deseado para tablets */
-            }
-
-            .product-image {
-                width: 70px !important;
-                /* Ancho deseado para tablets */
-                height: auto !important;
-                /* Alto deseado para tablets */
             }
         }
     </style>
