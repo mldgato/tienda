@@ -52,7 +52,7 @@
             }
 
             .product-image {
-                width: 45px !important;
+                width: 60px !important;
                 /* Ancho deseado para celulares */
                 height: auto !important;
                 /* Alto deseado para celulares */
