@@ -63,3 +63,6 @@ $routes->get('admin/sales/myReports', 'SaleController::myReports');
 $routes->post('admin/sales/buscarVentasAjax', 'SaleController::buscarVentasAjax');
 $routes->post('admin/sales/searchSalebyDate', 'SaleController::searchSalebyDate');
 $routes->get('admin/sales/salesbydate', 'SaleController::salesbydate');
+
+$routes->get('admin/reports/index/(:num)', 'PdfController::index/$1');
+$routes->match(['get', 'post'], 'admin/reports/htmlToPDF/(:num)', 'PdfController::htmlToPDF/$1');
